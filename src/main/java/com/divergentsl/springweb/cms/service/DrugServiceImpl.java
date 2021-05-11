@@ -17,8 +17,11 @@ public class DrugServiceImpl implements DrugService {
 		
 	@Override
 	@Transactional
-	public Drug insertDrug(Drug drug) {
-		return (Drug)drugDao.insert(drug);
+	public void insertDrug(String name, String quantity) {
+		Drug drug = new Drug();
+		drug.setName(name);
+		drug.setQuantity(quantity);
+		drugDao.insert(drug);
 		
 	}
 
@@ -40,5 +43,7 @@ public class DrugServiceImpl implements DrugService {
 		drugDao.remove(id);
 		
 	}
+
+	
 
 }

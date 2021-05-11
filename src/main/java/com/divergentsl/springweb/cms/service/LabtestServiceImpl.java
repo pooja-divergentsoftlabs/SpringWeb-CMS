@@ -18,8 +18,12 @@ public class LabtestServiceImpl implements LabtestService {
 
 	@Override
 	@Transactional
-	public Labtest insertLabtest(Labtest labtest) {
-		return (Labtest)labtestDao.insert(labtest);
+	public void insertLabtest(String name, String patientname) {
+		Labtest labtest = new Labtest();
+		labtest.setName(name);
+		labtest.setPatientname(patientname);
+		labtestDao.insert(labtest);
+		
 	}
 
 	@Override
@@ -40,5 +44,7 @@ public class LabtestServiceImpl implements LabtestService {
 		labtestDao.remove(id);
 		
 	}
+
+	
 
 }

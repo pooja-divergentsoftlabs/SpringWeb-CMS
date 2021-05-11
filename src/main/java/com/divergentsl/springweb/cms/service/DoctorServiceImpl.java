@@ -18,11 +18,12 @@ public class DoctorServiceImpl implements DoctorService {
 
 	@Override
 	@Transactional
-	public Doctor insertDoctor(Doctor doctor) {
-		return (Doctor)doctorDao.insert(doctor) ;
-		
+	public void insertDoctor(String name, String fees) {
+		Doctor doctor=new Doctor();
+		doctor.setName(name);
+		doctor.setFees(fees);
+		doctorDao.insert(doctor);
 	}
-
 	@Override
 	@Transactional(readOnly = true)
 	public Doctor findDoctor(int id) {
@@ -40,5 +41,7 @@ public class DoctorServiceImpl implements DoctorService {
 	public void removeDoctor(int id) {
 		doctorDao.remove(id);
 	}
+
+	
 
 }

@@ -6,7 +6,7 @@ import com.divergentsl.springweb.cms.entity.Drug;
 
 public interface DrugService {
 
-	public Drug insertDrug(Drug drug);
+	public void insertDrug(String name,String quantity);
 
 	public Drug findDrug(int id);
 

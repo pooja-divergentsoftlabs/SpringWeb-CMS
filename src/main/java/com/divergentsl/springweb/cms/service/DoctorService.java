@@ -6,7 +6,7 @@ import com.divergentsl.springweb.cms.entity.Doctor;
 
 public interface DoctorService {
 	
-	public Doctor insertDoctor(Doctor doctor);
+	public void insertDoctor(String name, String fees);
 
 	public Doctor findDoctor(int id);
 

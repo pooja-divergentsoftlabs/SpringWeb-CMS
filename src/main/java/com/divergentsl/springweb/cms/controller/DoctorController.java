@@ -38,14 +38,13 @@ public class DoctorController {
 	protected String save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 
-		int doctorId = Integer.parseInt(req.getParameter("id"));
+		
 		String doctorName = req.getParameter("name");
 		String doctorFees = req.getParameter("fees");
 		
 
-		Doctor doctor = new Doctor(doctorId, doctorName, doctorFees);
-		doctorService.insertDoctor(doctor);
-				
+		Doctor doctor = new Doctor();
+		doctorService.insertDoctor(doctorName, doctorFees);
 		return "redirect:/doc";
 	
 

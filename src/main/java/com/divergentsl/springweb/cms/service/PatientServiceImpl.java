@@ -17,8 +17,14 @@ public class PatientServiceImpl implements PatientService {
 	
 	@Override
 	@Transactional
-	public Patient insertPatient(Patient patient) {
-		return (Patient)patientDao.insert(patient) ;
+	public void insertPatient(String name,String address, String contactnumber) {
+		Patient patient=new Patient();
+		patient.setName(name);
+		patient.setAddress(address);
+		patient.setContactnumber(contactnumber);
+		patientDao.insert(patient);
+		
+		
 	}
 
 	@Override
@@ -39,5 +45,7 @@ public class PatientServiceImpl implements PatientService {
 		patientDao.remove(id);
 		
 	}
+
+	
 	
 }

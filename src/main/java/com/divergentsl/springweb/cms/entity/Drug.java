@@ -1,67 +1,26 @@
 package com.divergentsl.springweb.cms.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Data;
+
+@Data
 @Entity
 public class Drug {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
+	
+	@Column(name="name")
 	String name;
+	
+	@Column(name="quantity")
 	String quantity;
-	
-	
-	public Drug(int id, String name, String quantity) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.quantity = quantity;
-	}
-
-
-	public Drug() {
-		super();
-		
-	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getQuantity() {
-		return quantity;
-	}
-
-
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
-	}
-
-
-	@Override
-	public String toString() {
-		return "Drug [id=" + id + ", name=" + name + ", quantity=" + quantity + "]";
-	}
-	
-	
 	
 	
 	

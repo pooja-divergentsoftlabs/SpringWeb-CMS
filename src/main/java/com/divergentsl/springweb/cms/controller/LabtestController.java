@@ -42,13 +42,12 @@ public class LabtestController {
 	protected String save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 
-		int labtestId = Integer.parseInt(req.getParameter("id"));
 		String labtestName = req.getParameter("name");
 		String labtestPatientname = req.getParameter("patientname");
 		
 
-		Labtest labtest = new Labtest(labtestId, labtestName, labtestPatientname);
-		labtestService.insertLabtest(labtest);
+		Labtest labtest = new Labtest();
+		labtestService.insertLabtest(labtestName, labtestPatientname);
 				
 		return "redirect:/lab";
 	

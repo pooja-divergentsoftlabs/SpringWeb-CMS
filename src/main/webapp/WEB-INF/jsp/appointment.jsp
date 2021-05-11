@@ -28,15 +28,7 @@
 								<!-- Form Name -->
 								<legend>Appointment Add</legend>
 								
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-md-4 control-label" for="id">ID</label>
-									<div class="col-md-4">
-										<input id="id" name="id" type="text" placeholder=""
-											class="form-control input-md">
-
-									</div>
-							
+								
 
 								<!-- Text input-->
 								<div class="form-group">
@@ -81,17 +73,17 @@
 							<table id="example" class="table table-striped table-bordered">							
 							<thead>
 								<tr>
-									<th>Id</th>
+								
 									<th>Name</th>
 									<th>Date</th>
-									
+									<th>Action</th>
 									
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${allAppointments}" var="appointment">
 									<tr>
-										<td><c:out value="${appointment.id}" /></td>
+										
 										<td><c:out value="${appointment.name}" /></td>
 										<td><c:out value="${appointment.date}" /></td>							
 										<td><a href="app/remove?appointmentId=${appointment.id}"

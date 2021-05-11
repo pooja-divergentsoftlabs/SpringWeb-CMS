@@ -28,14 +28,6 @@
 								<!-- Form Name -->
 								<legend>Patient Add</legend>
 								
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-md-4 control-label" for="id">ID</label>
-									<div class="col-md-4">
-										<input id="id" name="id" type="text" placeholder=""
-											class="form-control input-md">
-
-									</div>
 							
 
 								<!-- Text input-->
@@ -90,17 +82,16 @@
 							<table id="example" class="table table-striped table-bordered">							
 							<thead>
 								<tr>
-									<th>Id</th>
 									<th>Name</th>
 									<th>Address</th>
 									<th>ContactNumber</th>
+									<th>Action</th>
 									
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${allPatients}" var="patient">
-									<tr>
-										<td><c:out value="${patient.id}" /></td>
+									<tr>	
 										<td><c:out value="${patient.name}" /></td>
 										<td><c:out value="${patient.address}" /></td>	
 										<td><c:out value="${patient.contactnumber}" /></td>							

@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Labtest</title>
+<title>LabTest</title>
 
-<script src="/springweb-jpa-sample//resources/js/bootstrap.min.js"></script>
-<link href="/springweb-jpa-sample//resources/css/bootstrap.min.css" rel="stylesheet">
+<script src="resources/js/bootstrap.min.js"></script>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -28,14 +28,7 @@
 								<!-- Form Name -->
 								<legend>Labtest Add</legend>
 								
-								<!-- Text input-->
-								<div class="form-group">
-									<label class="col-md-4 control-label" for="id">ID</label>
-									<div class="col-md-4">
-										<input id="id" name="id" type="text" placeholder=""
-											class="form-control input-md">
-
-									</div>
+								
 
 								<!-- Text input-->
 								<div class="form-group">
@@ -80,15 +73,16 @@
 							<table id="example" class="table table-striped table-bordered">							
 							<thead>
 								<tr>
-									<th>Id</th>
+									
 									<th>Name</th>
 									<th>PatientName</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${allLabtests}" var="labtest">
 									<tr>
-										<td><c:out value="${labtest.id}" /></td>
+										
 										<td><c:out value="${labtest.name}" /></td>
 										<td><c:out value="${labtest.patientname}" /></td>
 										<td><a href="lab/remove?labtestId=${labtest.id}"

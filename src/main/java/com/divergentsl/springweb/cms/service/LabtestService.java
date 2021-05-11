@@ -6,7 +6,7 @@ import com.divergentsl.springweb.cms.entity.Labtest;
 
 public interface LabtestService {
 	
-	public Labtest insertLabtest(Labtest labtest);
+	public void insertLabtest(String name, String patientname);
 
 	public Labtest findLabtest(int id);
 

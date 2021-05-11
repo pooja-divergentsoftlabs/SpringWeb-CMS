@@ -42,7 +42,7 @@ public class LabtestDaoImpl implements LabtestDao<Labtest> {
 	public void remove(int id) {
 		Labtest labtest = entityManager.find( Labtest.class,id);
 		if(labtest!=null) {
-		entityManager.remove(id);
+		entityManager.remove(labtest);
 		}
 		
 	}

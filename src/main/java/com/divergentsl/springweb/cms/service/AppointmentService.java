@@ -6,7 +6,7 @@ import com.divergentsl.springweb.cms.entity.Appointment;
 
 public interface AppointmentService {
 	
-	public Appointment insertAppointment(Appointment appointment);
+	public void insertAppointment(String name, String date);
 
 	public Appointment findAppointment(int id);
 

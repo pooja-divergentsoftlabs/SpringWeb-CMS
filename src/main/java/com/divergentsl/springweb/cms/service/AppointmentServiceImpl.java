@@ -17,8 +17,12 @@ public class AppointmentServiceImpl implements AppointmentService {
 
 	@Override
 	@Transactional
-	public Appointment insertAppointment(Appointment appointment) {		
-		return (Appointment)appointmentDao.insert(appointment);
+	public void insertAppointment(String name, String date) {
+		Appointment appointment= new Appointment();
+		appointment.setName(name);
+		appointment.setDate(date);
+		appointmentDao.insert(appointment);
+		
 	}
 
 	@Override
@@ -39,5 +43,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 		appointmentDao.remove(id);
 		
 	}
+
+	
 
 }

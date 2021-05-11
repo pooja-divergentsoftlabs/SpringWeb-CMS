@@ -41,14 +41,14 @@ private static final long serialVersionUID = 1L;
 	protected String save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 
-		int appointmentId = Integer.parseInt(req.getParameter("id"));
+		
 		String appointmentName = req.getParameter("name");
 		String appointmentDate = req.getParameter("date");
 		
 		
 
-		Appointment appointment = new Appointment(appointmentId, appointmentName, appointmentDate);
-		appointmentService.insertAppointment(appointment);
+		Appointment appointment = new Appointment();
+		appointmentService.insertAppointment(appointmentName, appointmentDate);
 				
 		return "redirect:/app";
 	

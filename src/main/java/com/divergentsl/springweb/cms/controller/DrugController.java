@@ -42,13 +42,13 @@ public class DrugController {
 	protected String save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 
-		int drugId = Integer.parseInt(req.getParameter("id"));
+		
 		String drugName = req.getParameter("name");
 		String drugQuantity = req.getParameter("quantity");
 		
 
-		Drug drug = new Drug(drugId, drugName, drugQuantity);
-		drugService.insertDrug(drug);
+		Drug drug = new Drug();
+		drugService.insertDrug(drugName, drugQuantity);
 				
 		return "redirect:/drug";
 	

@@ -43,14 +43,14 @@ public class PatientController {
 	protected String save(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 
-		int patientId = Integer.parseInt(req.getParameter("id"));
+		
 		String patientName = req.getParameter("name");
 		String patientAddress = req.getParameter("address");
 		String patientContactnumber = req.getParameter("contactnumber");
 		
 
-		Patient patient = new Patient(patientId, patientName, patientAddress, patientContactnumber);
-		patientService.insertPatient(patient);
+		Patient patient = new Patient();
+		patientService.insertPatient(patientName, patientAddress, patientContactnumber);
 				
 		return "redirect:/pnt";
 	

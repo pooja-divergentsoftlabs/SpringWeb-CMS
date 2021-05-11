@@ -1,49 +1,30 @@
 package com.divergentsl.springweb.cms.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 @Entity
 public class Labtest {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int id;
+	
+	@Column(name="name")
 	public String name;
+	
+	@Column(name="patientname")
 	public String patientname;
-	
-	
-	public Labtest() {	
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public Labtest(int id, String name, String patientname) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.patientname = patientname;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getPatientname() {
-		return patientname;
-	}
-	public void setPatientname(String patientname) {
-		this.patientname = patientname;
-	}
-	@Override
-	public String toString() {
-		return "Labtest [id=" + id + ", name=" + name + ", patientname=" + patientname + "]";
-	}
 	
 	
 	
